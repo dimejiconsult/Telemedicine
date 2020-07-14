@@ -19,14 +19,26 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third party
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'corsheaders',
     'rest_framework',
-    'knox'
+    'safedelete',
+    'knox',
+
+    # app
+    'UserProfile'
 ]
 
 MIDDLEWARE = [
@@ -88,4 +100,4 @@ REST_FRAMWORK = {
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-AUTH_USER_MODEL = 'UserProfile.MyUser'
+# AUTH_USER_MODEL = 'UserProfile.Profile'
