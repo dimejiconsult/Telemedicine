@@ -6,7 +6,8 @@ from safedelete.models import SafeDeleteManager
 
 
 class UserManager(BaseUserManager):
-    pass
+    def create_user(self, username, email, password=None, active=True, )
+    " create user manager "
 
 class Profile(SafeDeleteModel, AbstractUser):
     pass
