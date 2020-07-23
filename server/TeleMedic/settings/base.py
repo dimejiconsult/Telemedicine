@@ -26,9 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
-
-    #third party
+  
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -37,9 +35,6 @@ INSTALLED_APPS = [
     'safedelete',
     'knox',
 
-    #app
-    'UserProfile',
-]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -79,7 +74,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-SITE_ID = 1
+
 
 # Static files (CSS, JavaScript, Images)
 
@@ -97,7 +92,4 @@ REST_FRAMWORK = {
     'DATETIME_FORMAT':"%m/%d/%Y %H:%M:%S"
 }
 
-ACCOUNT_EMAIL_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
-#AUTH_USER_MODEL = 'UserProfile.Profile'
+
