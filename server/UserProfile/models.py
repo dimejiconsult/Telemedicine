@@ -15,7 +15,7 @@ class UserManager(BaseUserManager):
             raise  ValueError('please provide a email')
         email = self.normalize_email(email)
         user =self.model(email=email, **extra_fields)
-        user.active = True
+        user.active = False
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -67,7 +67,7 @@ class Profile(AbstractBaseUser, PermissionsMixin):
         return (self.first_name, self.last_name)
  
     def __str__(self):
-        return self.first_name+' '+self.last_name
+        return self.email
         
     
 
