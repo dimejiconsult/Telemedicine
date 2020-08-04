@@ -13,7 +13,7 @@ SECRET_KEY = '72mz8xszml0e_$l!id=@^x=7gomht+^z17$^@=7ug=mk0^x#w1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-  
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'TeleMedic.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.abspath(os.path.join(os.path.dirname(__file__),'../../../frontend/' 'build'))],
+        'DIRS': [os.path.join(BASE_DIR,'TeleMedic/static')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,7 +84,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+<<<<<<< HEAD
 #STATICFILES_DIRS = [os.path.abspath(os.path.join(os.path.dirname(__file__),'../../../frontend/' 'build/static'))]
+=======
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+>>>>>>> f324746e9aa27b52eb859f22b96e8d74821c9657
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
