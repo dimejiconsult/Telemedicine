@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'safedelete',
     'knox',
-
+    'graphene_django',
     'UserProfile',
 ]
 
@@ -84,7 +84,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [os.path.abspath(os.path.join(os.path.dirname(__file__),'../../../frontend/' 'build/static'))]
+#STATICFILES_DIRS = [os.path.abspath(os.path.join(os.path.dirname(__file__),'../../../frontend/' 'build/static'))]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -111,3 +111,8 @@ SITE_ID = 1
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTH_USER_MODEL = 'UserProfile.Profile'
+
+
+GRAPHENE = {
+    'SCHEMA': 'TeleMedic.schema.schema'
+}

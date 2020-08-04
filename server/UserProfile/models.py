@@ -30,12 +30,12 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_DoctorProfile(self,email,password,**extra_fields):
-        """ create super user """
-        user =self.create_user(email,password,**extra_fields)
-        user.is_active = False
-        user.save(using=self._db)
-        return user
+    # def create_DoctorProfile(self,email,password,**extra_fields):
+    #     """ create super user """
+    #     user =self.create_user(email,password,**extra_fields)
+    #     user.is_active = False
+    #     user.save(using=self._db)
+    #     return user
 
     def get_by_natural_key(self, email):
         return self.get(email=email)
