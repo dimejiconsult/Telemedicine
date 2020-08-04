@@ -15,7 +15,7 @@ class UserManager(BaseUserManager):
             raise  ValueError('please provide a email')
         email = self.normalize_email(email)
         user =self.model(email=email, **extra_fields)
-        user.active = True
+        user.active = False
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -30,12 +30,12 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_DoctorProfile(self,email,password,**extra_fields):
-        """ create super user """
-        user =self.create_user(email,password,**extra_fields)
-        user.is_active = False
-        user.save(using=self._db)
-        return user
+    # def create_DoctorProfile(self,email,password,**extra_fields):
+    #     """ create super user """
+    #     user =self.create_user(email,password,**extra_fields)
+    #     user.is_active = False
+    #     user.save(using=self._db)
+    #     return user
 
     def get_by_natural_key(self, email):
         return self.get(email=email)
@@ -67,7 +67,7 @@ class Profile(AbstractBaseUser, PermissionsMixin):
         return (self.first_name, self.last_name)
  
     def __str__(self):
-        return self.first_name+' '+self.last_name
+        return self.email
         
     
 
