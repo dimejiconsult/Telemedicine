@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 from graphene_django.views import GraphQLView
 from django.views.decorators.csrf import csrf_exempt
 urlpatterns = [
-    path('home', include('Homepage.urls')),
+    path('', include('Homepage.urls')),
     path('api/auth/', include('UserProfile.urls')),
     path('account/', include('allauth.urls')),
     path('graphql/',csrf_exempt(GraphQLView.as_view(graphiql=True))),
